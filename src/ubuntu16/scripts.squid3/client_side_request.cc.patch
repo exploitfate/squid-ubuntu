@@ -1,0 +1,14 @@
+--- client_side_request.cc	2019-07-15 16:10:19.000000000 +0300
++++ client_side_request.cc.new	2019-07-16 17:43:04.547352193 +0300
+@@ -530,6 +530,11 @@
+             }
+             debugs(85, 3, HERE << "validate IP " << clientConn->local << " non-match from Host: IP " << ia->in_addrs[i]);
+         }
++
++	// disable host forgery check (you have been warned, never do this!!!)
++        http->request->flags.hostVerified = true;
++        http->doCallouts();
++        return;
+     }
+     debugs(85, 3, HERE << "FAIL: validate IP " << clientConn->local << " possible from Host:");
+     hostHeaderVerifyFailed("local IP", "any domain IP");
