@@ -15,7 +15,7 @@ If you are installing Squid 4.12 for the first time from diladele.com repo, run 
     wget -qO - http://packages.diladele.com/diladele_pub.asc | sudo apt-key add -
 
     # add repo
-    echo "deb http://squid411.diladele.com/ubuntu/ bionic main" > /etc/apt/sources.list.d/squid412.diladele.com.list
+    echo "deb http://squid412.diladele.com/ubuntu/ bionic main" > /etc/apt/sources.list.d/squid412.diladele.com.list
 
     # update the apt cache
     apt-get update
